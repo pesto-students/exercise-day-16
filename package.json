@@ -5,6 +5,7 @@
   "author": "Arfat Salman <giney.paradise@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "server": "cd server && node_modules/.bin/nodemon index",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "precommit": "lint-staged"
@@ -18,5 +19,8 @@
     "husky": "^0.14.3",
     "jest": "^22.4.3",
     "lint-staged": "^7.0.4"
+  },
+  "dependencies": {
+    "babel-eslint": "^8.2.3"
   }
 }
