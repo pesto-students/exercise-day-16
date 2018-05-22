@@ -6,6 +6,7 @@ Q.1
     2. Add 2 input boxes and an add button to a form.
     3. Now when the user adds key and value in the two input boxes and hits enter,
        the key value pair should be stored in the sessionStorage.
+       Add any value with key as 'world'
     4. Add a view which shows the live sessionStorage data.
     5. Whenever a new key is added, it should be viewed in the session storage.
     Advanced (Proceed if done with the previous)
