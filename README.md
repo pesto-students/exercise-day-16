@@ -8,32 +8,28 @@ There are separate branches for Segment 1 and Segment 2 in this repository. Both
 
 The reason for two separate branches for two segments is to have separate test suites run on travis CI.
 
-### Instructions:
+## Theory Questions
 
-1) Clone this repo using
-  ```
-    git clone <link to repo>
-  ```
+1.  What is the difference beween HTTP and HTTPS ?
 
-2) Change directory
-  ```
-    cd <Folder Name>
-  ```
+2.  What is UDP ?
 
-3) Install dependencies
-  ```
-    yarn
-  ```
+3.  How does HTTPS work ?
 
-4) To do the exercises in branch `segment-1`
-  ```
-    git checkout -b segment-1
-    git pull origin segment-1
-  ```
+4.  What does cache do ?
+    1.  It saves cookies to your computer.
+    2.  It speeds up the internet connection.
+    3.  It stores passwords on your computer.
+    4.  It loads web pages faster that are stored on the computer locally.
 
-5) Do your work and then push to the branch
-  ```
-    git add .
-    git commit -m "your commit message"
-    git push origin segment-1
-  ```
+5.  What are two security methods used to encrypt and tunnel internet traffic with web browsers?
+    1.  SSL and TLS
+    2.  HTML and SSL
+    3.  SLS and TLS
+    4.  TLS, SSL and HTML
+
+6.  What is CSP (Content-Security-Policy).
+
+7.  What is referer header of HTTP ?
+
+8.  What is the full form of SSH? What is it used for ?
