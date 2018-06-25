@@ -4,10 +4,44 @@ import Post from './components/Post';
 import './App.css';
 
 class App extends Component {
-  state = {
-    posts: [],
-  };
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+      page: 1,
+    };
+    this.handleNextClick = this.handleNextClick.bind(this);
+    this.handlePrevClick = this.handlePrevClick.bind(this);
+  }
+  componentDidMount() {
+    fetch(`http://localhost:3001/posts/${this.state.page}`, { headers: { 'pesto-password': 'darth vader' } })
+      .then(resp => resp.json()).then((recieved) => {
+        this.setState({
+          posts: recieved.data,
+        });
+      })
+      .catch((rej) => { console.log(rej); });
+  }
+  componentWillUpdate() {
+    fetch(`http://localhost:3001/posts/${this.state.page}`, { headers: { 'pesto-password': 'darth vader' } })
+      .then(resp => resp.json()).then((recieved) => {
+        this.setState({
+          posts: recieved.data,
+        });
+      })
+      .catch((rej) => { console.log(rej); });
+  }
+  handlePrevClick() {
+    this.setState({
+      page: this.state.page - 1,
+    });
+  }
+  handleNextClick() {
+    console.log(('nextclick'));
+    this.setState({
+      page: this.state.page + 1,
+    });
+  }
   render() {
     return (
       <div>
@@ -34,5 +68,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
