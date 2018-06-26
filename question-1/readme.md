@@ -8,3 +8,8 @@
 
 3. Write a script if ran in the console returns true or false
     depending on whether the user is logged in or not.
+
+Answer:
+function isUserLoggedIn() {
+    return !!localStorage.getItem('logged-in')
+}
