@@ -24,6 +24,55 @@
 
   <!-- Do not remove the below div -->
   <div class='status'></div>
+
+  <table id='session-storage-data'>
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody></tbody>
+  </table>
+
+  <script>
+    const form = document.querySelector('form');
+    const sessionStorageData = document.querySelector('#session-storage-data');
+    renderSSData();
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const key = e.target[0].value;
+      const val = e.target[1].value;
+
+      e.target.reset();
+
+      sessionStorage[key] = val;
+
+      renderSSData();
+    });
+
+    sessionStorageData.addEventListener('click', e => {
+      if (e.target.className.includes('delete-ss-key')) {
+        sessionStorage.removeItem(e.target.dataset.key);
+        renderSSData();
+      }
+    });
+
+    function renderSSData() {
+      sessionStorageData.querySelector('tbody').innerHTML =
+        Object.keys(sessionStorage).map(key => (`
+          <tr>
+            <td>${key}</td>
+            <td>${sessionStorage[key]}</td>
+            <td><button class="delete-ss-key" data-key=${key}>X</button></td>
+          </tr>
+        `)).join('');
+    }
+  </script>
+
   <script src="check.js"></script>
 </body>
 
