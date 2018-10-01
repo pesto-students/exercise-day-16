@@ -52,6 +52,6 @@ module.exports = class Queue {
     let str = '';
     // eslint-disable-next-line
     this.arr.forEach(el => str = str + cb(el) + ',');
-    return str;
+    return str.substr(0, str.length - 1);
   }
 };
