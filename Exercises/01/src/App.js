@@ -4,6 +4,18 @@ import Post from './components/Post';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    fetch('http://localhost:3001/posts/1', {
+      method: 'GET',
+      headers: {
+        'pesto-password': 'darth vader',
+      },
+    }).then(response => response.json()).then((res) => {
+      console.log(res);
+    });
+  }
+
   state = {
     posts: [],
   };
