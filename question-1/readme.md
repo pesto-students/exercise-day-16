@@ -8,3 +8,7 @@
 
 3. Write a script if ran in the console returns true or false
     depending on whether the user is logged in or not.
+
+```
+localStorage['logged-in']
+```

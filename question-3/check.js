@@ -9,3 +9,31 @@ window.setInterval(() => {
   }
 }, 200);
 
+function submitForm(event) {
+  event.preventDefault();
+  const key = document.getElementById('key');
+  const keyValue = document.getElementById('value');
+  sessionStorage.setItem(key.value, keyValue.value);
+  key.value = '';
+  keyValue.value = '';
+  updateNode();
+}
+
+function updateNode() {
+  const ul = document.getElementById("sessionList");
+  ul.innerHTML = '';
+
+  Object.keys(sessionStorage).forEach(key => {
+    const value = sessionStorage.getItem(key);
+    const li = document.createElement("li");
+    const liChild = `${key} => ${value}     <button href="" onclick="deleteKey('${key}')">Delete</button>`;
+    li.innerHTML = liChild;
+    ul.appendChild(li);
+  });
+}
+
+function deleteKey(key) {
+  sessionStorage.removeItem(key);
+  updateNode();
+}
+updateNode();

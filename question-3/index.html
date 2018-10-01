@@ -14,13 +14,17 @@
 
   <h1 class='heading'>Session Storage Editor</h1>
 
-  <form>
+  <form onsubmit="submitForm(event)">
     Key:
     <input type="text" name="firstname" class="input" id="key"> Value:
     <input type="text" name="lastname" class="input" id="value">
 
     <input type="submit" value="Submit" class="btn">
   </form>
+
+  <ul id="sessionList" style="margin: auto; width: 600px;">
+    
+  </ul>
 
   <!-- Do not remove the below div -->
   <div class='status'></div>
